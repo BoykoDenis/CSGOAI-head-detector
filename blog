@@ -1,1 +1,23 @@
+First thing first is dataset. 
 
+Nothing will work without dataset. 
+So lets create one!
+Starting CSGO, press GO then Win+Alt+R and recording is strarted.
+Played the game, we lose, crap...
+But at least we have the video. 
+Now need to cut it into frames, so let use incredible vlc media player.
+Just setup scene video filter and crop filter and convert the video. 
+In the folder we have over thousand 100 by 100 images cropped around the crosshair.
+
+Now the lables are required.
+Calling to mind tkinter and making an image clicker and just clicking heads on images(if they are there)
+[x cord, y cord, 1(as a probability of head existence)] for images withou head: [0, 0, 0].
+The code is in "dataset_creator.py".
+
+Now the hard part, neural network...
+
+I decided to use 3 convolutional layers without pooling and 2 liner layers after them, so the network will have 1 input chanel and 3 outputs.
+For convolutional layer is used ReLU activation function and for linear sigmoid. Mean Squer Error is used as the loss function and Adam optimizer for optimization
+Code is in "detector.py"
+
+Note: for running the trained model code "runner.py" is used
