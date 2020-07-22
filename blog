@@ -21,3 +21,17 @@ For convolutional layer is used ReLU activation function and for linear sigmoid.
 Code is in "detector.py"
 
 Note: for running the trained model code "runner.py" is used
+
+##########
+
+After training the network with the structue described upper, was founded that it does not work properly. It simply overfits and gives the same output for any input so was assumed
+that the network outputs 0, but biases just add some fixed number.
+Looking forward for further experiments...
+
+##########
+
+Plan has changed... Was assumed that using just one value for describing the probability and solving th eclassification problem is not a good idea. So second value 
+was added to the output, forth to be clear. Also linear layers was divided so after the convolutional layers goes to pararel linear networks, one outputs probability using softmax
+[1, 0] for yes and [0, 1] for no. Second outputs cordinates of the head.
+
+##########
